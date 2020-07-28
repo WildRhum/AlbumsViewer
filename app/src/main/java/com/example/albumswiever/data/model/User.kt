@@ -1,10 +1,11 @@
 package com.example.albumswiever.data.model
 
 import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class User(
-    var userId : Int,
-    var userName : String
+    @SerializedName("id") var userId : Int,
+    @SerializedName ("name") var userName : String
 ) : Parcelable
