@@ -7,5 +7,5 @@ import com.example.albumswiever.data.model.User
 interface AlbumViewerRepository {
     suspend fun getAlbums() : List<Album>
     suspend fun getUsers() : List<User>
-    suspend fun getPhotoWithAlbumId(albumId : Int) : List<Photo>
+    suspend fun getPhotosWithAlbumId(albumId : Int) : List<Photo>
 }

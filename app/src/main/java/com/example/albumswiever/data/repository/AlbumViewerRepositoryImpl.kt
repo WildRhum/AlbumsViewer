@@ -13,7 +13,7 @@ class AlbumViewerRepositoryImpl : AlbumViewerRepository {
 
     override suspend fun getUsers() = retrofit.getUsers()
 
-    override suspend fun getPhotoWithAlbumId(albumId: Int) = retrofit.getProductInfo(albumId)
+    override suspend fun getPhotosWithAlbumId(albumId: Int) = retrofit.getProductInfo(albumId)
 
     companion object {
         private val BASE_URL = "https://jsonplaceholder.typicode.com"
