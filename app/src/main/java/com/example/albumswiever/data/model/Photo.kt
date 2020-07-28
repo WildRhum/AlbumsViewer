@@ -1,11 +1,11 @@
-package com.example.albumswiever.model
+package com.example.albumswiever.data.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Album(
+data class Photo(
+    var id : Int,
     var albumId : Int,
-    var userId : Int,
-    var albumTitle : String
+    var photoUrl : String
 ) : Parcelable

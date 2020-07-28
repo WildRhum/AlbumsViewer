@@ -1,4 +1,4 @@
-package com.example.albumswiever.model
+package com.example.albumswiever.data.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
