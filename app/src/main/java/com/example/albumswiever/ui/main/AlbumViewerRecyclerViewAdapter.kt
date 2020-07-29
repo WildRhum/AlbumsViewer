@@ -15,7 +15,8 @@ import com.example.albumswiever.data.model.User
  */
 class AlbumViewerRecyclerViewAdapter(
     private val albumsValues: LiveData<List<Album>>,
-    private val usersValues: LiveData<List<User>>
+    private val usersValues: LiveData<List<User>>,
+    private val listener: AlbumViewerFragment.AlbumRecyclerViewClickListener?
 ) : RecyclerView.Adapter<AlbumViewerRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,12 +29,18 @@ class AlbumViewerRecyclerViewAdapter(
         val album = albumsValues.value?.get(position)
         holder.albumName.text = album?.albumTitle
         holder.albumAuthor.text = usersValues.value?.first { it.userId == album?.userId }?.userName
+        holder.itemView.setOnClickListener { holder.onClick(holder.itemView) }
     }
 
     override fun getItemCount(): Int = albumsValues.value?.size ?: 0
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
         val albumName: TextView = view.findViewById(R.id.albumName)
         val albumAuthor: TextView = view.findViewById(R.id.albumAuthor)
+
+        override fun onClick(v: View?) {
+            val item = v?.tag as? Album
+            listener?.onAlbumRecyclerViewClick(item, this.layoutPosition)
+        }
     }
 }
