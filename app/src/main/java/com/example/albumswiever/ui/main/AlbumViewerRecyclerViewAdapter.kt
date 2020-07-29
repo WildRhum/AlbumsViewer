@@ -29,14 +29,18 @@ class AlbumViewerRecyclerViewAdapter(
         val album = albumsValues.value?.get(position)
         holder.albumName.text = album?.albumTitle
         holder.albumAuthor.text = usersValues.value?.first { it.userId == album?.userId }?.userName
-        holder.itemView.setOnClickListener { holder.onClick(holder.itemView) }
+        with(holder.mView) {
+            tag = album
+            id = position
+            setOnClickListener{ holder.onClick(holder.mView) }
+        }
     }
 
     override fun getItemCount(): Int = albumsValues.value?.size ?: 0
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
-        val albumName: TextView = view.findViewById(R.id.albumName)
-        val albumAuthor: TextView = view.findViewById(R.id.albumAuthor)
+    inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView), View.OnClickListener {
+        val albumName: TextView = mView.findViewById(R.id.albumName)
+        val albumAuthor: TextView = mView.findViewById(R.id.albumAuthor)
 
         override fun onClick(v: View?) {
             val item = v?.tag as? Album
