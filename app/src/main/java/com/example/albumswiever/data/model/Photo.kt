@@ -8,5 +8,5 @@ import kotlinx.android.parcel.Parcelize
 data class Photo(
     @SerializedName("id") var id : Int,
     @SerializedName ("albumId") var albumId : Int,
-    @SerializedName ("url") var photoUrl : String
+    @SerializedName ("thumbnailUrl") var photoUrl : String
 ) : Parcelable
