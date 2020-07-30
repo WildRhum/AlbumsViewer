@@ -1,4 +1,4 @@
-package com.example.albumswiever.data.repository
+package com.example.albumsviewer.data.repository
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

@@ -1,4 +1,4 @@
-package com.example.albumswiever
+package com.example.albumsviewer
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

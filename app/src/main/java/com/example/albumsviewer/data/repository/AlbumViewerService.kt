@@ -1,8 +1,8 @@
-package com.example.albumswiever.data.repository
+package com.example.albumsviewer.data.repository
 
-import com.example.albumswiever.data.model.Album
-import com.example.albumswiever.data.model.Photo
-import com.example.albumswiever.data.model.User
+import com.example.albumsviewer.data.model.Album
+import com.example.albumsviewer.data.model.Photo
+import com.example.albumsviewer.data.model.User
 import retrofit2.http.GET
 import retrofit2.http.Query
 

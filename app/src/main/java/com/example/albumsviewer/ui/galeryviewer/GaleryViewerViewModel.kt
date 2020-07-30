@@ -1,12 +1,12 @@
-package com.example.albumswiever.ui.galerywiever
+package com.example.albumsviewer.ui.galeryviewer
 
 import androidx.lifecycle.*
-import com.example.albumswiever.data.model.Album
-import com.example.albumswiever.data.repository.AlbumViewerRepositoryImpl
-import com.example.albumswiever.data.repository.AlbumViewerRepositoryImpl.Companion.albumViewerRepositoryImpl
+import com.example.albumsviewer.data.model.Album
+import com.example.albumsviewer.data.repository.AlbumViewerRepositoryImpl
+import com.example.albumsviewer.data.repository.AlbumViewerRepositoryImpl.Companion.albumViewerRepositoryImpl
 import kotlinx.coroutines.Dispatchers
 
-class GaleryWieverViewModel: ViewModel() {
+class GaleryViewerViewModel: ViewModel() {
 
     private val repository: AlbumViewerRepositoryImpl = albumViewerRepositoryImpl
 

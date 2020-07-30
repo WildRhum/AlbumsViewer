@@ -1,12 +1,12 @@
-package com.example.albumswiever
+package com.example.albumsviewer
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import com.example.albumswiever.data.model.Album
-import com.example.albumswiever.ui.albumwiever.AlbumViewerFragment
-import com.example.albumswiever.ui.galerywiever.GaleryWieverFragment
+import com.example.albumsviewer.data.model.Album
+import com.example.albumsviewer.ui.albumviewer.AlbumViewerFragment
+import com.example.albumsviewer.ui.galeryviewer.GaleryViewerFragment
 
 class MainActivity : AppCompatActivity(),
     AlbumViewerFragment.AlbumRecyclerViewClickListener {
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(),
     override fun onAlbumRecyclerViewClick(item: Album?, position: Int) {
         Log.d("MainActivity", "Album clicked: ${item?.albumTitle} at $position position")
         supportFragmentManager.beginTransaction()
-            .replace(R.id.container, GaleryWieverFragment.newInstance(item))
+            .replace(R.id.container, GaleryViewerFragment.newInstance(item))
             .addToBackStack(null)
             .commit()
     }

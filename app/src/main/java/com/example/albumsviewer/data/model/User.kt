@@ -1,4 +1,4 @@
-package com.example.albumswiever.data.model
+package com.example.albumsviewer.data.model
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

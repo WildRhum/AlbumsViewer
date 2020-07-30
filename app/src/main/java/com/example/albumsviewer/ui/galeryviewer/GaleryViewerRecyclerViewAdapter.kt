@@ -1,4 +1,4 @@
-package com.example.albumswiever.ui.galerywiever
+package com.example.albumsviewer.ui.galeryviewer
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.load.model.LazyHeaders
-import com.example.albumswiever.R
-import com.example.albumswiever.data.model.Photo
+import com.example.albumsviewer.R
+import com.example.albumsviewer.data.model.Photo
 import kotlinx.android.synthetic.main.galery_grid_recycler_item.view.*
 
 /**

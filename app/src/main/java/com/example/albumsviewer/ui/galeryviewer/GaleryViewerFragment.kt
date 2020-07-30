@@ -1,4 +1,4 @@
-package com.example.albumswiever.ui.galerywiever
+package com.example.albumsviewer.ui.galeryviewer
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,23 +10,23 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.albumswiever.R
-import com.example.albumswiever.data.model.Album
+import com.example.albumsviewer.R
+import com.example.albumsviewer.data.model.Album
 
-class GaleryWieverFragment(val album: Album? = null) : Fragment() {
+class GaleryViewerFragment(val album: Album? = null) : Fragment() {
 
     private lateinit var mView: View
-    private lateinit var viewModel: GaleryWieverViewModel
+    private lateinit var viewModel: GaleryViewerViewModel
 
     companion object {
-        fun newInstance(album: Album?) = GaleryWieverFragment(album)
+        fun newInstance(album: Album?) = GaleryViewerFragment(album)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         mView = inflater.inflate(R.layout.galery_wiever_fragment, container, false)
 
-        viewModel = ViewModelProvider(this).get(GaleryWieverViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(GaleryViewerViewModel::class.java)
 
         album?.let { viewModel.setAlbumData(it) }
 

@@ -1,4 +1,4 @@
-package com.example.albumswiever.tools
+package com.example.albumsviewer.tools
 
 import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.module.AppGlideModule

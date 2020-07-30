@@ -1,4 +1,4 @@
-package com.example.albumswiever.ui.albumwiever
+package com.example.albumsviewer.ui.albumviewer
 
 import android.content.Context
 import android.os.Bundle
@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import com.example.albumswiever.R
-import com.example.albumswiever.data.model.Album
+import com.example.albumsviewer.R
+import com.example.albumsviewer.data.model.Album
 
 class AlbumViewerFragment : Fragment() {
 

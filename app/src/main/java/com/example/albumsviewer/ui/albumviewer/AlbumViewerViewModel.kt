@@ -1,9 +1,9 @@
-package com.example.albumswiever.ui.albumwiever
+package com.example.albumsviewer.ui.albumviewer
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.example.albumswiever.data.repository.AlbumViewerRepositoryImpl
-import com.example.albumswiever.data.repository.AlbumViewerRepositoryImpl.Companion.albumViewerRepositoryImpl
+import com.example.albumsviewer.data.repository.AlbumViewerRepositoryImpl
+import com.example.albumsviewer.data.repository.AlbumViewerRepositoryImpl.Companion.albumViewerRepositoryImpl
 import kotlinx.coroutines.Dispatchers
 
 class AlbumViewerViewModel : ViewModel() {

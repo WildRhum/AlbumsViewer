@@ -1,4 +1,4 @@
-package com.example.albumswiever
+package com.example.albumsviewer
 
 import org.junit.Test
 

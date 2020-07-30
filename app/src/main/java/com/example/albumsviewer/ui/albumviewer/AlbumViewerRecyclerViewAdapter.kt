@@ -1,4 +1,4 @@
-package com.example.albumswiever.ui.albumwiever
+package com.example.albumsviewer.ui.albumviewer
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.LiveData
-import com.example.albumswiever.R
-import com.example.albumswiever.data.model.Album
-import com.example.albumswiever.data.model.User
+import com.example.albumsviewer.R
+import com.example.albumsviewer.data.model.Album
+import com.example.albumsviewer.data.model.User
 
 /**
  * [RecyclerView.Adapter] that can display a [Album.albumTitle] and [User.userName].

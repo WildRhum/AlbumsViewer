@@ -8,5 +8,5 @@
     android:layout_height="match_parent"
     android:scrollbars="vertical"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".ui.albumwiever.AlbumViewerFragment"
+    tools:context=".ui.albumviewer.AlbumViewerFragment"
     tools:listitem="@layout/album_list_recycler_item" />
