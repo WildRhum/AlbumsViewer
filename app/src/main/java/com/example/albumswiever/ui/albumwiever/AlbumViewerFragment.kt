@@ -1,4 +1,4 @@
-package com.example.albumswiever.ui.main
+package com.example.albumswiever.ui.albumwiever
 
 import android.content.Context
 import android.os.Bundle
@@ -14,7 +14,7 @@ import com.example.albumswiever.data.model.Album
 
 class AlbumViewerFragment : Fragment() {
 
-    private lateinit var viewModel: AlbumViewerModel
+    private lateinit var viewModel: AlbumViewerViewModel
     private lateinit var mView: View
     private var listener: AlbumRecyclerViewClickListener? = null
 
@@ -22,23 +22,27 @@ class AlbumViewerFragment : Fragment() {
         fun newInstance() = AlbumViewerFragment()
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(requireActivity()).get(AlbumViewerModel::class.java)
-
-        viewModel.albums.observe(requireActivity(), Observer {
-            mView.findViewById<RecyclerView>(R.id.albumRecyclerView).adapter?.notifyDataSetChanged()
-        })
-
-        viewModel.users.observe(requireActivity(), Observer {
-            mView.findViewById<RecyclerView>(R.id.albumRecyclerView).adapter?.notifyDataSetChanged()
-        })
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         mView = inflater.inflate(R.layout.album_list, container, false)
-        mView.findViewById<RecyclerView>(R.id.albumRecyclerView).adapter = AlbumViewerRecyclerViewAdapter(viewModel.albums, viewModel.users, listener)
+
+        viewModel = ViewModelProvider(this).get(AlbumViewerViewModel::class.java)
+
+        viewModel.albums.observe(viewLifecycleOwner, Observer {
+            mView.findViewById<RecyclerView>(R.id.albumRecyclerView).adapter?.notifyDataSetChanged()
+        })
+
+        viewModel.users.observe(viewLifecycleOwner, Observer {
+            mView.findViewById<RecyclerView>(R.id.albumRecyclerView).adapter?.notifyDataSetChanged()
+        })
+
+        mView.findViewById<RecyclerView>(R.id.albumRecyclerView).adapter =
+            AlbumViewerRecyclerViewAdapter(
+                viewModel.albums,
+                viewModel.users,
+                listener
+            )
+
         return mView
     }
 
