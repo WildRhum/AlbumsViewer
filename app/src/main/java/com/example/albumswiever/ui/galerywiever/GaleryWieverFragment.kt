@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide
 import com.example.albumswiever.R
 import com.example.albumswiever.data.model.Album
 
-class GaleryWieverFragment(val album: Album?) : Fragment() {
+class GaleryWieverFragment(val album: Album? = null) : Fragment() {
 
     private lateinit var mView: View
     private lateinit var viewModel: GaleryWieverViewModel
@@ -34,25 +34,26 @@ class GaleryWieverFragment(val album: Album?) : Fragment() {
             mView.findViewById<RecyclerView>(R.id.galeryGridRecyclerView).adapter?.notifyDataSetChanged()
         })
 
-        mView.findViewById<RecyclerView>(R.id.galeryGridRecyclerView).adapter =
-            GaleryViewerRecyclerViewAdapter(viewModel.photos, Glide.with(this))
-
         val toolbar = (activity as AppCompatActivity?)?.supportActionBar
         toolbar?.let {
-            it.title = "Album : ${album?.albumTitle}"
+            it.title = "Album : " + viewModel.getAlbum()?.albumTitle
             it.setDisplayHomeAsUpEnabled(true)
             it.setDisplayShowHomeEnabled(true)
         }
+
+        mView.findViewById<RecyclerView>(R.id.galeryGridRecyclerView).adapter =
+            GaleryViewerRecyclerViewAdapter(viewModel.photos, Glide.with(this))
+
         return mView
     }
 
     override fun onDetach() {
+        super.onDetach()
         val toolbar = (activity as AppCompatActivity?)?.supportActionBar
         toolbar?.let {
             it.title = resources.getString(R.string.app_name)
             it.setDisplayHomeAsUpEnabled(false)
             it.setDisplayShowHomeEnabled(false)
         }
-        super.onDetach()
     }
 }
