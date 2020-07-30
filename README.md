@@ -3,7 +3,7 @@ AlbumViewer with jsonplaceholder data
 
 ## Application made for Interview
 
-The application uses jsonplaceholder data to display a List of Album with corresponding Album User.
+The application uses [jsonplaceholder](https://jsonplaceholder.typicode.com/) data to display a List of Album with corresponding Album User.
 
 On a click on an Album, it opens a Galery of the photos of the Album
 
