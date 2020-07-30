@@ -4,7 +4,7 @@ import com.example.albumswiever.data.model.Album
 import com.example.albumswiever.data.model.Photo
 import com.example.albumswiever.data.model.User
 import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface AlbumViewerService {
 
@@ -14,6 +14,6 @@ interface AlbumViewerService {
     @GET("/albums")
     suspend fun getAlbums(): List<Album>
 
-    @GET("/photos?albumId={albumId}")
-    suspend fun getProductInfo(@Path("albumId") albumId: Int): List<Photo>
+    @GET("/photos")
+    suspend fun getPhotosFromAlbumId(@Query("albumId") albumId: Int): List<Photo>
 }

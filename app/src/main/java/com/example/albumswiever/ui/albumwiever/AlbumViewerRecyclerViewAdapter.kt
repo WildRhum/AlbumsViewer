@@ -1,4 +1,4 @@
-package com.example.albumswiever.ui.main
+package com.example.albumswiever.ui.albumwiever
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater

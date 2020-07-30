@@ -7,15 +7,21 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class AlbumViewerRepositoryImpl : AlbumViewerRepository {
+class AlbumViewerRepositoryImpl private constructor() : AlbumViewerRepository {
+
+    private object HOLDER {
+        val INSTANCE = AlbumViewerRepositoryImpl()
+    }
 
     override suspend fun getAlbums() = retrofit.getAlbums()
 
     override suspend fun getUsers() = retrofit.getUsers()
 
-    override suspend fun getPhotosWithAlbumId(albumId: Int) = retrofit.getProductInfo(albumId)
+    override suspend fun getPhotosWithAlbumId(albumId: Int) = retrofit.getPhotosFromAlbumId(albumId)
 
     companion object {
+        val albumViewerRepositoryImpl: AlbumViewerRepositoryImpl by lazy { HOLDER.INSTANCE }
+
         private val BASE_URL = "https://jsonplaceholder.typicode.com"
         private val gson : Gson = GsonBuilder()
             .create()
