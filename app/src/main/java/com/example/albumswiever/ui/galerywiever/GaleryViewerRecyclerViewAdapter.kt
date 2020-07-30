@@ -29,9 +29,9 @@ class GaleryViewerRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val photo = photosValues?.value?.get(position)
-
+        val url = GlideUrl(photo?.photoUrl?.trim(), HEADERS)
         glide
-            .load(photo?.photoUrl?.trim())
+            .load(url)
             .into(holder.photoItemImage)
     }
 
@@ -39,5 +39,12 @@ class GaleryViewerRecyclerViewAdapter(
 
     inner class ViewHolder(mView: View) : RecyclerView.ViewHolder(mView) {
         val photoItemImage: AppCompatImageView = mView.gridItemImage as AppCompatImageView
+    }
+
+    companion object {
+        val HEADERS: LazyHeaders = LazyHeaders.Builder()
+            .addHeader("User-Agent","Mozilla/5.0")
+            .addHeader("Host", "")
+            .build()
     }
 }
