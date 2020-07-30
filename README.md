@@ -9,9 +9,9 @@ On a click on an Album, it opens a Galery of the photos of the Album
 
 ## Technologies used :
 
-#Kotlin
-#Coroutines
-#LiveData
-#MVVM
-#Observer
-#Repository Pattern
+.Kotlin
+.Coroutines
+.LiveData
+.MVVM
+.Observer
+.Repository Pattern
