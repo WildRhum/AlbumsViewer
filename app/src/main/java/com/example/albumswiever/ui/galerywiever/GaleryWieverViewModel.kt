@@ -18,6 +18,10 @@ class GaleryWieverViewModel: ViewModel() {
         viewModelAlbum.value = album
     }
 
+    fun getAlbum() : Album? {
+        return viewModelAlbum.value
+    }
+
     val photos = liveData(Dispatchers.IO) {
         val retrivedPhotos = viewModelAlbum.value?.albumId?.let { repository.getPhotosWithAlbumId(it) }
         emit(retrivedPhotos)
