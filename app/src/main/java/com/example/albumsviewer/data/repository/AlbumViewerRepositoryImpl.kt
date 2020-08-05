@@ -20,7 +20,7 @@ class AlbumViewerRepositoryImpl private constructor() : AlbumViewerRepository {
     override suspend fun getPhotosWithAlbumId(albumId: Int) = retrofit.getPhotosFromAlbumId(albumId)
 
     companion object {
-        val albumViewerRepositoryImpl: AlbumViewerRepositoryImpl by lazy { HOLDER.INSTANCE }
+        val albumViewerRepository: AlbumViewerRepository by lazy { HOLDER.INSTANCE }
 
         private val BASE_URL = "https://jsonplaceholder.typicode.com"
         private val gson : Gson = GsonBuilder()
