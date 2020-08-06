@@ -9,9 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.albumsviewer.R
 import com.example.albumsviewer.data.model.Album
+import com.example.albumsviewer.tools.GlideApp
 
 class GaleryViewerFragment(val album: Album? = null) : Fragment() {
 
@@ -42,7 +42,7 @@ class GaleryViewerFragment(val album: Album? = null) : Fragment() {
         }
 
         mView.findViewById<RecyclerView>(R.id.galeryGridRecyclerView).adapter =
-            GaleryViewerRecyclerViewAdapter(viewModel.photos, Glide.with(this))
+            GaleryViewerRecyclerViewAdapter(viewModel.photos, GlideApp.with(this))
 
         return mView
     }
